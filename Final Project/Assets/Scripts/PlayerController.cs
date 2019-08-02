@@ -108,11 +108,12 @@ public class PlayerController : MonoBehaviour
 
     void SetCountText()
      {
-          countText.text = "Count: " + count.ToString();
+          countText.text = "Cookiest: " + count.ToString();
 
         if (count >= 5)
         {
             winText.text = "Level Complete!";
+            FindObjectOfType<SoundEffects>().WinMusic();
             GameOver();
             if (gameOver)
             {
@@ -121,6 +122,10 @@ public class PlayerController : MonoBehaviour
 
                 restartText.text = "Press 'R' for Level Restart";
                 restart = true;
+
+                speed = 0;
+                jumpForce = 0;
+                jumpForce1 = 0;
             }
         }
      }
@@ -137,6 +142,10 @@ public class PlayerController : MonoBehaviour
                 {
                     restartText.text = "Press 'R' for Level Restart";
                     restart = true;
+
+                speed = 0;
+                jumpForce = 0;
+                jumpForce1 = 0;
                 }
         }
     }

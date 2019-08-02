@@ -126,6 +126,8 @@ public class PlayerController4 : MonoBehaviour
             if (count >= 99)
             {
                 Destroy(other.gameObject);
+                count = count + 101;
+                health = health - 0;
             }
             else if(health == 0)
             {
@@ -144,9 +146,10 @@ public class PlayerController4 : MonoBehaviour
      {
           countText.text = "Cookies: " + count.ToString();
 
-        if (count >= 99)
+        if (count >= 200)
         {
             winText.text = "You Win!";
+            FindObjectOfType<SoundEffects>().WinMusic();
             GameOver();
             if (gameOver)
             {
@@ -154,6 +157,9 @@ public class PlayerController4 : MonoBehaviour
 
                 restartText.text = "Press 'R' for Level Restart";
                 restart = true;
+                speed = 0;
+                jumpForce = 0;
+                jumpForce1 = 0;
             }
         }
      }
@@ -170,6 +176,10 @@ public class PlayerController4 : MonoBehaviour
                 {
                     restartText.text = "Press 'R' for Level Restart";
                     restart = true;
+                speed = 0;
+                jumpForce = 0;
+                jumpForce1 = 0;
+
                 }
         }
     }

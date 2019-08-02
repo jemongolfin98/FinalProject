@@ -10,6 +10,7 @@ TagManager:
   - Platform
   - PickUp1
   - Enemy2
+  - Enemy1
   layers:
   - Default
   - TransparentFX

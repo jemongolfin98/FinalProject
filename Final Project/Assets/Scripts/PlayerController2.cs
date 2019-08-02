@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class PlayerController1 : MonoBehaviour
+public class PlayerController2 : MonoBehaviour
 {
     public float speed;
     public float jumpForce;
@@ -20,6 +20,7 @@ public class PlayerController1 : MonoBehaviour
     private Rigidbody2D rb2d;
     private int count;
     private int health;
+    private int enemyHealth;
     private bool gameOver;
     private bool restart;
     private bool nextLevel;
@@ -29,7 +30,8 @@ public class PlayerController1 : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
         count = 0;
-        health = 3;
+        health = 5;
+        enemyHealth = 1;
         winText.text = "";
         loseText.text = "";
         restartText.text = "";
@@ -55,7 +57,7 @@ public class PlayerController1 : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.R))
             {
-                SceneManager.LoadScene("Level 2 - Cloudy Day");
+                SceneManager.LoadScene("Level 3 - Snowy Day");
             }
 
         }
@@ -64,7 +66,7 @@ public class PlayerController1 : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.L))
             {
-                SceneManager.LoadScene("Level 3 - Snowy Day");
+                SceneManager.LoadScene("Level 4 - The Stary Night");
             }
         }
     }
@@ -114,6 +116,28 @@ public class PlayerController1 : MonoBehaviour
             else
             {
                 other.gameObject.SetActive(false);
+                health = health - 1;
+                SetHealthText();
+            }
+        }
+
+        if(other.gameObject.CompareTag("Enemy1"))
+        {
+            if(health == 0)
+            {
+                health = health - 0;
+            }
+            else if(enemyHealth == 0)
+            {
+                other.gameObject.SetActive(false);
+                health = health - 1;
+                SetHealthText();
+
+            }
+            else
+            {
+                other.gameObject.SetActive(true);
+                enemyHealth = enemyHealth - 1;
                 health = health - 1;
                 SetHealthText();
             }

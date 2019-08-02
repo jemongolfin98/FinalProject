@@ -12,8 +12,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 1 - Sunny Day.unity
     guid: 558b329745f6b0e429ebc2b48ee44353
   - enabled: 1
+    path: Assets/Scenes/Level 3 - Snowy Day.unity
+    guid: dbc05632748ebdb4ab671731ac9040c2
+  - enabled: 1
     path: Assets/Scenes/Level 2 - Cloudy Day.unity
     guid: 61d5360ed148d7c44ad54756719d424f
+  - enabled: 1
+    path: Assets/Scenes/Level 4 - Stary Night.unity
+    guid: a36aaa163c5acae4089b5880df14a2be
   - enabled: 1
     path: Assets/Scenes/Level 5 - The Final Boss.unity
     guid: ed2c15af5aa51b64ba8a8713e4b1c762
